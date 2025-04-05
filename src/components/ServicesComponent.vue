@@ -2,6 +2,25 @@
 
 <script setup>
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+
+const data = [
+  {
+    title: 'Data Analyst',
+    description: 'I turn raw data into meaningful insights, helping businesses make smarter decisions',
+    image: 'data_analyst.png',
+  },
+  {
+    title: 'Software Engineer',
+    description: 'I love building things that make life easier and solving complex problems with clean, efficient code',
+    image: 'software_engineer.png',
+  },
+  {
+    title: 'Mentor',
+    description: 'I’m passionate about sharing knowledge and making learning easier for others',
+    image: 'mentor.png',
+  },
+];
+
 function servicesNext() {
   const Services = Array.from(document.querySelectorAll('.services')).filter((el) => !el.hasAttribute('hidden'));
   Services[0].setAttribute('hidden', 'true');
@@ -38,41 +57,15 @@ function lengthService() {
     <h1 class="font-bold text-4xl text-white w-full text-center mt-24">My Services</h1>
 
     <div class="flex flex-row w-full h-1/2 p-8 mt-12 justify-center items-center text-white">
-      <div class="w-1/3 flex flex-col justify-center items-center services" id="services_1">
+      <div class="w-1/3 flex flex-col justify-center items-center services" :id="`services_${i + 1}`" v-for="(d, i) in data" :key="i + 1" :hidden="i + 1 > 1">
         <div class="relative p-4 w-[75%] h-full flex justify-center items-center bg-primary-opacity40 shadow-lg rounded-lg">
-          <div class="absolute flex justify-center items-center top-[-42%] w-1/4 h-[50%] rounded-2xl bg-gray-300 text-center">
-            <img class="" alt="Semar Image" src="../assets/services/data_analyst.png" />
+          <div class="absolute flex justify-center items-center top-[-30%] w-1/2 h-[40%] lg:top-[-42%] lg:w-1/4 lg:h-[50%] rounded-2xl bg-gray-300 text-center">
+            <img class="" :alt="`${d.title}`" :src="`../src/assets/services/${d.image}`" />
           </div>
 
           <div class="w-full flex flex-wrap items-center justify-center mb-5">
-            <h2 class="text-2xl font-bold text-center mb-2.5 mt-2">Data Analyst</h2>
-            <p class="text-white text-xl text-center">I turn raw data into meaningful insights, helping businesses make smarter decisions</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="w-1/3 flex flex-col justify-center items-center services" id="services_2" hidden>
-        <div class="relative p-4 w-[75%] h-full flex justify-center items-center bg-primary-opacity40 shadow-lg rounded-lg">
-          <div class="absolute flex justify-center items-center top-[-42%] w-1/4 h-[50%] rounded-2xl bg-gray-300 text-center">
-            <img class="" alt="Semar Image" src="../assets/services/software_engineer.png" />
-          </div>
-
-          <div class="w-full flex flex-wrap items-center justify-center mb-5">
-            <h2 class="text-2xl font-bold text-center mb-2.5 mt-2">Software Engineer</h2>
-            <p class="text-white text-xl text-center">I love building things that make life easier and solving complex problems with clean, efficient code</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="w-1/3 flex flex-col justify-center items-center services" id="services_3" hidden>
-        <div class="relative p-4 w-[75%] h-full flex justify-center items-center bg-primary-opacity40 shadow-lg rounded-lg">
-          <div class="absolute flex justify-center items-center top-[-42%] w-1/4 h-[50%] rounded-2xl bg-gray-300 text-center">
-            <img class="" alt="Semar Image" src="../assets/services/mentor.png" />
-          </div>
-
-          <div class="w-full flex flex-wrap items-center justify-center mb-5">
-            <h2 class="text-2xl font-bold text-center mb-2.5 mt-2">Mentor</h2>
-            <p class="text-white text-xl text-center">I’m passionate about sharing knowledge and making learning easier for others</p>
+            <h2 class="text-2xl font-bold text-center mb-2.5 mt-2">{{ d.title }}</h2>
+            <p class="text-white text-xl text-center">{{ d.description }}</p>
           </div>
         </div>
       </div>
