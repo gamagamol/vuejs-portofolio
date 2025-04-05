@@ -71,7 +71,7 @@ export const contactData = {
     "link": "https://www.linkedin.com/in/gama-ariefsadya/",
     "icon":"linkedin"
   },{
-    "link": "https://www.instagram.com/gamagamol",
+    "link": "https://www.instagram.com/gamariefsadya/",
     "icon":"instagram"
   },{
     "link": "https://github.com/gamagamol",
