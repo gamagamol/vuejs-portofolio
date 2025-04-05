@@ -66,7 +66,20 @@ export const experienceData = [
 
 export const contactData = {
     "icons" : ['golang', 'php', 'python', 'dotnet', 'laravel', 'js', 'vue', 'react', 'mysql', 'postgres', 'mongo', 'redis'],
- "connect_icons" : ['instagram', 'github', 'linkedin', 'upwork', 'whatsapp', 'youtube']
+  "connect_icons": [
+    {
+    "link": "https://www.linkedin.com/in/gama-ariefsadya/",
+    "icon":"linkedin"
+  },{
+    "link": "https://www.instagram.com/gamagamol",
+    "icon":"instagram"
+  },{
+    "link": "https://github.com/gamagamol",
+    "icon":"github"
+    }, {
+      "link": "https://wa.me/6287708305938",
+      "icon":"whatsapp"
+  }]
 }
 
 export const projectsData = {

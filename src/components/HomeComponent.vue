@@ -15,7 +15,7 @@
           </p>
 
           <button class="mt-4 bg-white text-black p-4 rounded-xl mr-2">
-            <a href=""> Get In Touch </a>
+            <a href="https://www.linkedin.com/in/gama-ariefsadya/" target="_blank"> Get In Touch </a>
           </button>
           <button class="mt-4 border-4 border-white p-4 rounded-xl">
             <a href=""> View Project </a>
