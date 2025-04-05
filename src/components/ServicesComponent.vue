@@ -4,32 +4,19 @@
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { servicesData } from '../store/DataPage.js';
 
-const data = [
-  {
-    title: 'Data Analyst',
-    description: 'I turn raw data into meaningful insights, helping businesses make smarter decisions',
-    image: 'data_analyst.png',
-  },
-  {
-    title: 'Software Engineer',
-    description: 'I love building things that make life easier and solving complex problems with clean, efficient code',
-    image: 'software_engineer.png',
-  },
-  {
-    title: 'Mentor',
-    description: 'I’m passionate about sharing knowledge and making learning easier for others',
-    image: 'mentor.png',
-  },
-];
+const serviceImages = import.meta.glob('../assets/services/*.png', {
+  eager: true,
+  import: 'default',
+});
+
+const getServiceImage = (name) => serviceImages[`../assets/services/${name}`] || '';
 
 function servicesNext() {
   const Services = Array.from(document.querySelectorAll('.services')).filter((el) => !el.hasAttribute('hidden'));
   Services[0].setAttribute('hidden', 'true');
   let currentServicesIndex = parseInt(Services[0].id.split('_')[1]);
-
   let nextService = `services_${currentServicesIndex + 1}`;
-
-  if (currentServicesIndex == lengthService()) {
+  if (currentServicesIndex === lengthService()) {
     nextService = 'services_1';
   }
   document.getElementById(nextService).removeAttribute('hidden');
@@ -39,10 +26,8 @@ function servicesPrevious() {
   const Services = Array.from(document.querySelectorAll('.services')).filter((el) => !el.hasAttribute('hidden'));
   Services[0].setAttribute('hidden', 'true');
   let currentServicesIndex = parseInt(Services[0].id.split('_')[1]);
-
   let nextService = `services_${currentServicesIndex - 1}`;
-
-  if (currentServicesIndex == 1) {
+  if (currentServicesIndex === 1) {
     nextService = 'services_' + lengthService();
   }
   document.getElementById(nextService).removeAttribute('hidden');
@@ -61,7 +46,7 @@ function lengthService() {
       <div class="w-1/3 flex flex-col justify-center items-center services" :id="`services_${i + 1}`" v-for="(d, i) in servicesData" :key="i + 1" :hidden="i + 1 > 1">
         <div class="relative p-4 w-[75%] h-full flex justify-center items-center bg-primary-opacity40 shadow-lg rounded-lg">
           <div class="absolute flex justify-center items-center top-[-30%] w-1/2 h-[40%] lg:top-[-42%] lg:w-1/4 lg:h-[50%] rounded-2xl bg-gray-300 text-center">
-            <img class="" :alt="`${d.title}`" :src="`../src/assets/services/${d.image}`" />
+            <img class="" :alt="d.title" :src="getServiceImage(d.image)" />
           </div>
 
           <div class="w-full flex flex-wrap items-center justify-center mb-5">
