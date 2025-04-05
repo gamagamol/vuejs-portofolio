@@ -2,6 +2,7 @@
 
 <script setup>
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { servicesData } from '../store/DataPage.js';
 
 const data = [
   {
@@ -57,7 +58,7 @@ function lengthService() {
     <h1 class="font-bold text-4xl text-white w-full text-center mt-24">My Services</h1>
 
     <div class="flex flex-row w-full h-1/2 p-8 mt-12 justify-center items-center text-white">
-      <div class="w-1/3 flex flex-col justify-center items-center services" :id="`services_${i + 1}`" v-for="(d, i) in data" :key="i + 1" :hidden="i + 1 > 1">
+      <div class="w-1/3 flex flex-col justify-center items-center services" :id="`services_${i + 1}`" v-for="(d, i) in servicesData" :key="i + 1" :hidden="i + 1 > 1">
         <div class="relative p-4 w-[75%] h-full flex justify-center items-center bg-primary-opacity40 shadow-lg rounded-lg">
           <div class="absolute flex justify-center items-center top-[-30%] w-1/2 h-[40%] lg:top-[-42%] lg:w-1/4 lg:h-[50%] rounded-2xl bg-gray-300 text-center">
             <img class="" :alt="`${d.title}`" :src="`../src/assets/services/${d.image}`" />

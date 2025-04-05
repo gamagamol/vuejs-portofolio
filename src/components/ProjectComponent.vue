@@ -1,14 +1,15 @@
+<!-- @format -->
+
 <script setup>
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-
-const project_images = ['semar', 'ayoconnect', 'bagong', 'igracias'];
+import { projectsData } from '../store/DataPage.js';
 </script>
 
 <template>
   <section class="h-screen w-full flex flex-col items-center snap-start overflow-y-hidden" id="projects">
     <h1 class="font-bold text-4xl text-white w-full text-center mt-20 lg:mt-24">Projects</h1>
-    <div class="flex flex-row gap-6 flex-wrap w-full h-full lg:w-1/2 lg:h-1/2 p-8  lg:mt-12 justify-center text-white">
-      <div class="flex flex-col bg-primary-opacity40 shadow-lg rounded-lg p-4" v-for="images in project_images">
+    <div class="flex flex-row gap-6 flex-wrap w-full h-full lg:w-1/2 lg:h-1/2 p-8 lg:mt-12 justify-center text-white">
+      <div class="flex flex-col bg-primary-opacity40 shadow-lg rounded-lg p-4" v-for="images in projectsData.images">
         <div class="w-full flex justify-between gap-2 mb-5">
           <h2 class="text-1xl font-bold">{{ images }}</h2>
 
@@ -24,11 +25,10 @@ const project_images = ['semar', 'ayoconnect', 'bagong', 'igracias'];
       </div>
     </div>
 
-    <div class="flex flex-row  lg:mt-32">
+    <div class="flex flex-row lg:mt-32">
       <button class="text-1xl rounded-xl border-white border-2 p-2 text-white">
         <a href=""> View More </a>
       </button>
     </div>
-
   </section>
 </template>

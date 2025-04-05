@@ -1,8 +1,9 @@
 <!-- @format -->
 
 <script setup>
-const icons = ['golang', 'php', 'python', 'dotnet', 'laravel', 'js', 'vue', 'react', 'mysql', 'postgres', 'mongo', 'redis'];
-const connect_icons = ['instagram', 'github', 'linkedin', 'upwork', 'whatsapp', 'youtube'];
+
+import { contactData} from "../store/DataPage.js";
+
 </script>
 
 <template>
@@ -10,7 +11,7 @@ const connect_icons = ['instagram', 'github', 'linkedin', 'upwork', 'whatsapp', 
     <h1 class="font-bold text-4xl text-white w-full text-center mt-24">Tools</h1>
     <div class="infinite-scroll-container relative w-full h-1/2 overflow-hidden">
       <div class="infinite-scroll-content flex gap-6 p-4 items-center animate-scroll">
-        <template v-for="icon in icons" :key="`original-${icon}`">
+        <template v-for="icon in contactData.icons" :key="`original-${icon}`">
           <div class="flex flex-col bg-primary-opacity40 rounded-lg py-2 items-center p-4 min-w-1/4">
             <img class="rounded-2xl" :alt="icon" :src="`/src/assets/icons/${icon}.png`" />
           </div>
@@ -33,7 +34,7 @@ const connect_icons = ['instagram', 'github', 'linkedin', 'upwork', 'whatsapp', 
         <p class="text-white text-xl mb-5">Connect with me</p>
 
         <div class="flex flex-row gap-2">
-          <a class="" href="http://" v-for="icon in connect_icons">
+          <a class="" href="http://" v-for="icon in contactData.connect_icons">
             <img :src="`/src/assets/icons/${icon}.png`" />
           </a>
         </div>
