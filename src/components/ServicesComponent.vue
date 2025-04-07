@@ -39,19 +39,19 @@ function lengthService() {
 </script>
 
 <template>
-  <section class="snap-start min-h-[100svh] lg:h-screen w-full flex flex-col items-center " id="services">
-    <h1 class="font-bold text-8xl lg:text-4xl text-white w-full text-center mt-32 lg:mt-24">My Services</h1>
+  <section class="snap-start min-h-[100svh]  lg:h-screen w-full flex flex-col justify-center items-center  " id="services">
+    <h1 class="font-bold text-8xl lg:text-4xl text-white w-full text-center justify-start lg:mt-24">My Services</h1>
 
-    <div class="flex flex-row w-full h-1/2 p-8 mt-32 lg:mt-12 justify-center items-center text-white bg-red-300">
-      <div class="w-1/2  lg:w-1/3 flex flex-col justify-center items-center services" :id="`services_${i + 1}`" v-for="(d, i) in servicesData" :key="i + 1" :hidden="i + 1 > 1">
-        <div class="relative p-4 lg:w-[75%] h-full flex justify-center items-center bg-primary-opacity40 shadow-lg rounded-lg">
-          <div class="absolute flex justify-center items-center top-[-35%] w-1/2 h-[40%] lg:top-[-42%] lg:w-1/4 lg:h-[50%] rounded-2xl bg-gray-300 text-center">
-            <img class="" :alt="d.title" :src="getServiceImage(d.image)" />
+    <div class="flex flex-row w-full h-1/2 p-8 mt-32 lg:mt-12 justify-center items-center text-white  ">
+      <div class="w-1/2 h-full  lg:w-1/3  flex flex-col justify-center items-center services" :id="`services_${i + 1}`" v-for="(d, i) in servicesData" :key="i + 1" :hidden="i + 1 > 1">
+        <div class="relative p-16 lg:p-4 lg:w-[75%] h-full flex justify-center items-center bg-primary-opacity40 shadow-lg rounded-lg">
+          <div class="absolute flex justify-center items-center top-[-20%] w-1/2 h-[35%] lg:top-[-20%] lg:w-1/2 lg:h-[35%] rounded-2xl bg-gray-300 text-center">
+            <img class="text-center w-1/2 h-1/2" :alt="d.title" :src="getServiceImage(d.image)" />
           </div>
 
           <div class="w-full flex flex-wrap items-center justify-center mb-5">
             <h2 class="text-5xl lg:text-2xl font-bold text-center mb-2.5 mt-2">{{ d.title }}</h2>
-            <p class="text-white text-2xl lg:text-xl text-center">{{ d.description }}</p>
+            <p class="text-white text-4xl lg:text-xl text-center">{{ d.description }}</p>
           </div>
         </div>
       </div>

@@ -31,7 +31,7 @@ const getIconPath = (name) => icons[`../assets/icons/${name}.png`] || '';
       </div>
     </div>
 
-    <div class="flex flex-row gap-6 w-full  h-full lg:h-1/2 lg:mt-10 ">
+    <div class="flex flex-row gap-6 w-full  h-full lg:h-1/2 mt-32 lg:mt-10 ">
       <div class="flex flex-col w-1/2 justify-center items-start lg:items-start pl-16">
         <h1 class="text-8xl lg:text-5xl text-white font-bold mb-5">Let’s Work Together</h1>
         <p class="text-white text-3xl lg:text-xl mb-5">Want to discuss an opportunity to create something great? I’m ready when you are</p>
