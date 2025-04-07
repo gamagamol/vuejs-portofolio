@@ -2,15 +2,12 @@
 
 <script setup>
 import ContactComponent from '../components/ContactComponent.vue';
-
-
-
+import ProjectComponent from '../components/ProjectComponent.vue';
 </script>
 
 <template>
-  <!-- <NavbarComponent /> -->
   <div class="snap-y snap-mandatory h-screen overflow-y-scroll">
-    <h1>Projecs</h1>
+    <ProjectComponent :showAllProjects="true" />
     <ContactComponent />
   </div>
 </template>

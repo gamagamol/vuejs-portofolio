@@ -83,7 +83,10 @@ export const contactData = {
 }
 
 export const projectsData = {
- "images" :['semar', 'ayoconnect', 'bagong', 'igracias'],
+  "images": [
+    'semar',
+    'ayoconnect',
+    'bagong', 'igracias', 'prosamagi', 'xigracias', 'telkomSchools', 'mols',"tiketku","sygap"],
     
 }
 

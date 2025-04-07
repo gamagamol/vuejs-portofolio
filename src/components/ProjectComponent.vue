@@ -10,14 +10,21 @@ const projectImages = import.meta.glob('../assets/projects/*.png', {
 });
 
 const getProjectImage = (name) => projectImages[`../assets/projects/${name}.png`] || '';
+
+const { showAllProjects } = defineProps({
+  showAllProjects: {
+    type: Boolean,
+    default: false,
+  },
+});
 </script>
 
 <template>
-  <section class="h-screen w-full flex flex-col items-center snap-start overflow-y-hidden" id="projects">
+  <section class="min-h-screen w-full flex flex-col items-center snap-start overflow-y-hidden" id="projects">
     <h1 class="font-bold text-4xl text-white w-full text-center mt-20 lg:mt-24">Projects</h1>
 
     <div class="flex flex-row gap-6 flex-wrap w-full h-full lg:w-1/2 lg:h-1/2 p-8 lg:mt-12 justify-center text-white">
-      <div class="flex flex-col bg-primary-opacity40 shadow-lg rounded-lg p-4" v-for="images in projectsData.images" :key="images">
+      <div class="flex flex-col bg-primary-opacity40 shadow-lg rounded-lg p-4" v-for="images in showAllProjects ? projectsData.images : projectsData.images.slice(0, 4)" :key="images">
         <div class="w-full flex justify-between gap-2 mb-5">
           <h2 class="text-1xl font-bold">{{ images }}</h2>
           <span class="w-6 h-6 flex items-center justify-center bg-[rgb(230,230,230)] relative rounded-full text-center">
@@ -31,7 +38,7 @@ const getProjectImage = (name) => projectImages[`../assets/projects/${name}.png`
       </div>
     </div>
 
-    <div class="flex flex-row lg:mt-32">
+    <div class="flex flex-row lg:mt-32" v-if="!showAllProjects">
       <button class="text-1xl rounded-xl border-white border-2 p-2 text-white">
         <router-link :to="`/projects`">View More</router-link>
       </button>
