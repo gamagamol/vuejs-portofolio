@@ -11,8 +11,9 @@ import {experienceData } from "../store/DataPage.js"
       <div class="w-1/4 text-center flex flex-col items-center justify-center">
         <h1 class="font-bold text-5xl lg:text-7xl text-white ml-5">Experiences</h1>
       </div>
+      
       <div class="w-full lg:max-h-screen overflow-y-auto">
-        <div class="min-h-full" v-for="(d, i) in experienceData" :key="i">
+        <div class="lg:min-h-full" v-for="(d, i) in experienceData" :key="i">
           <div class="flex flex-col lg:flex-row gap-6 w-full p-8 items-start justify-start text-white">
             <div class="w-full lg:w-1/4 flex flex-col justify-start">
               <h1 class="font-bold text-xl">{{ d.year_start }} - {{ d.year_end }}</h1>
@@ -31,6 +32,7 @@ import {experienceData } from "../store/DataPage.js"
             
           </div>
         </div>
+
       </div>
     </div>
   </section>
