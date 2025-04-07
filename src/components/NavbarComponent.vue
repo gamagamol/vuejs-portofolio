@@ -7,24 +7,14 @@ const router = useRouter();
 const route = useRoute();
 
 function goToSection(sectionId) {
-  const targetRoute = { path: '/', hash: `#${sectionId}` };
-  if (route.path !== '/' || route.hash !== `#${sectionId}`) {
-    router.push(targetRoute).catch((err) => {
-      if (err.name !== 'NavigationDuplicated') {
-        throw err;
-      }
-      // Jika navigasi duplikat, tetap lakukan scroll
+  router.push('/').then(() => {
+    requestAnimationFrame(() => {
       const el = document.getElementById(sectionId);
       if (el) {
         el.scrollIntoView({ behavior: 'smooth' });
       }
     });
-  } else {
-    const el = document.getElementById(sectionId);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
+  });
 }
 </script>
 

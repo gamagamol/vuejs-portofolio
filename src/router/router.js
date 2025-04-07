@@ -1,5 +1,5 @@
 
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter,createWebHashHistory } from "vue-router";
 import MainPages from "../pages/MainPages.vue";
 import ProjecPages from "../pages/ProjectPages.vue";
 
@@ -16,7 +16,7 @@ const routes = [
     }]
 
 const  router = createRouter({
-    history: createWebHistory(),
+  history: createWebHashHistory(),
     routes,
     scrollBehavior(to, from, savedPosition) {
     if (to.hash) {
