@@ -39,7 +39,7 @@ function lengthService() {
 </script>
 
 <template>
-  <section class="h-screen w-full flex flex-col items-center snap-start" id="services">
+  <section class="lg:h-screen w-full flex flex-col items-center snap-start" id="services">
     <h1 class="font-bold text-4xl text-white w-full text-center mt-24">My Services</h1>
 
     <div class="flex flex-row w-full h-1/2 p-8 mt-12 justify-center items-center text-white">
