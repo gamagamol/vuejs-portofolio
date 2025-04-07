@@ -6,4 +6,5 @@ Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://
 # vuejs-portofolio
 
   // "homepage": "https://gamagamol.github.io/vuejs-portofolio"
-
+ <main class="snap-y snap-mandatory overflow-y-scroll h-screen">
+    <section id="home" class="snap-start min-h-[100svh]"> ... </section>

@@ -19,7 +19,7 @@ function goToSection(sectionId) {
 </script>
 
 <template>
-  <nav class="fixed top-0 left-1/2 transform -translate-x-1/2 w-max py-2 px-8 flex justify-center items-center gap-x-8 text-white border border-white/35 rounded-full bg-white/6 my-6">
+  <nav class="fixed top-0 left-1/2 transform -translate-x-1/2 w-max py-2 px-8 flex justify-center items-center gap-x-8 text-white border border-white/35 rounded-full bg-white/6 my-6 text-3xl lg:text-xl">
     <router-link @click="goToSection('home')" to="/" class="opacity-50 hover:opacity-100">Home</router-link>
     <router-link @click="goToSection('about-me')" to="/#about-me" class="opacity-50 hover:opacity-100">About Me</router-link>
     <router-link @click="goToSection('experiences')" to="/#experiences" class="opacity-50 hover:opacity-100">Experiences</router-link>

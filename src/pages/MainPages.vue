@@ -5,22 +5,20 @@ import AboutMeComponent from '../components/AboutMeComponent.vue';
 import ContactComponent from '../components/ContactComponent.vue';
 import ExperiencesComponent from '../components/ExperiencesComponent.vue';
 import HomeComponent from '../components/HomeComponent.vue';
-import NavbarComponent from '../components/NavbarComponent.vue';
 import ProjectComponent from '../components/ProjectComponent.vue';
 import ServicesComponent from '../components/ServicesComponent.vue';
-
 </script>
 
 <template>
   <!-- <NavbarComponent /> -->
-  <div class="snap-y snap-mandatory h-screen overflow-y-scroll">
+  <main class="snap-y snap-mandatory overflow-y-scroll h-screen">
     <HomeComponent />
     <AboutMeComponent />
     <ExperiencesComponent />
     <ProjectComponent />
     <ServicesComponent />
     <ContactComponent />
-  </div>
+  </main>
 </template>
 
 <style>
