@@ -12,7 +12,7 @@ const getIconPath = (name) => icons[`../assets/icons/${name}.png`] || '';
 </script>
 
 <template>
-  <section class="h-screen w-full flex flex-col items-center snap-start" id="contact">
+  <section class="h-screen w-full flex flex-col items-center snap-start" id="contacts">
     <h1 class="font-bold text-4xl text-white w-full text-center mt-24">Tools</h1>
 
     <div class="infinite-scroll-container relative w-full h-1/2 overflow-hidden">

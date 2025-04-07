@@ -1,12 +1,18 @@
 <!-- @format -->
 
 <script setup>
-import NavbarComponent from './components/NavbarComponent.vue';
+import ContactComponent from '../components/ContactComponent.vue';
+
+
 
 </script>
 
 <template>
-  <NavbarComponent/>
+  <!-- <NavbarComponent /> -->
+  <div class="snap-y snap-mandatory h-screen overflow-y-scroll">
+    <h1>Projecs</h1>
+    <ContactComponent />
+  </div>
 </template>
 
 <style>

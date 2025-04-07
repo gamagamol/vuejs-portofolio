@@ -33,7 +33,7 @@ const getProjectImage = (name) => projectImages[`../assets/projects/${name}.png`
 
     <div class="flex flex-row lg:mt-32">
       <button class="text-1xl rounded-xl border-white border-2 p-2 text-white">
-        <a href=""> View More </a>
+        <router-link :to="`/projects`">View More</router-link>
       </button>
     </div>
   </section>

@@ -1,14 +1,41 @@
 <!-- @format -->
 
-<script setup></script>
+<script setup>
+import { useRoute, useRouter } from 'vue-router';
+
+const router = useRouter();
+const route = useRoute();
+
+function goToSection(sectionId) {
+  const targetRoute = { path: '/', hash: `#${sectionId}` };
+  if (route.path !== '/' || route.hash !== `#${sectionId}`) {
+    router.push(targetRoute).catch((err) => {
+      if (err.name !== 'NavigationDuplicated') {
+        throw err;
+      }
+      // Jika navigasi duplikat, tetap lakukan scroll
+      const el = document.getElementById(sectionId);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  } else {
+    const el = document.getElementById(sectionId);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+}
+</script>
 
 <template>
   <nav class="fixed top-0 left-1/2 transform -translate-x-1/2 w-max py-2 px-8 flex justify-center items-center gap-x-8 text-white border border-white/35 rounded-full bg-white/6 my-6">
-    <a href="#home" class="opacity-50 hover:opacity-100">Home</a>
-    <a href="#about-me" class="opacity-50 hover:opacity-100">About Me</a>
-    <a href="#experiences" class="opacity-50 hover:opacity-100">Experiences</a>
-    <a href="#projects" class="opacity-50 hover:opacity-100">Projects</a>
-    <a href="#services" class="opacity-50 hover:opacity-100">Services</a>
-    <a href="#contact" class="opacity-50 hover:opacity-100">Contact</a>
+    <router-link @click="goToSection('home')" to="/" class="opacity-50 hover:opacity-100">Home</router-link>
+    <router-link @click="goToSection('about-me')" to="/#about-me" class="opacity-50 hover:opacity-100">About Me</router-link>
+    <router-link @click="goToSection('experiences')" to="/#experiences" class="opacity-50 hover:opacity-100">Experiences</router-link>
+    <router-link @click="goToSection('projects')" to="/#projects" class="opacity-50 hover:opacity-100">Projects</router-link>
+    <router-link @click="goToSection('services')" to="/#services" class="opacity-50 hover:opacity-100">Services</router-link>
+    <router-link @click="goToSection('contacts')" to="/#contacts" class="opacity-50 hover:opacity-100">Contacts</router-link>
   </nav>
+  <router-view></router-view>
 </template>
